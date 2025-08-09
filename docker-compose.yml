@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nextauth_flow:
+    image: postgres:15
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=nextauth_flow
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --locale=C

@@ -1,0 +1,37 @@
+{
+  "name": "nextauth-login-flow",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "next-auth": "^4.24.5",
+    "drizzle-orm": "^0.29.0",
+    "postgres": "^3.4.3",
+    "nanoid": "^5.0.4",
+    "@tailwindcss/forms": "^0.5.7"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.20.7",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "tailwindcss": "^3.3.0",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8"
+  }
+}
