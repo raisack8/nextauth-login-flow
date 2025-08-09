@@ -4,14 +4,26 @@ import { db } from '@/lib/db';
 import { users } from '@/drizzle/schema';
 import { nanoid } from 'nanoid';
 
-// ランダムな名前生成（Server Actionから移動）
-const generateRandomName = (): string => {
-  const adjectives = ['楽しい', '元気な', '優しい', '賢い', '面白い', '静かな', '明るい'];
-  const animals = ['パンダ', 'コアラ', 'ペンギン', 'うさぎ', 'きつね', 'ねこ', 'いぬ'];
-  const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-  const animal = animals[Math.floor(Math.random() * animals.length)];
-  return `${adjective}${animal}${Math.floor(Math.random() * 1000)}`;
-};
+const firstNames = [
+  'Alex', 'Blake', 'Casey', 'Drew', 'Emery', 'Finley', 'Gray', 'Hunter',
+  'Jamie', 'Kelly', 'Logan', 'Morgan', 'Nico', 'Parker', 'Quinn', 'River',
+  'Sage', 'Taylor', 'Avery', 'Bailey', 'Cameron', 'Dakota', 'Eden', 'Frankie',
+  'Haven', 'Indigo', 'Jordan', 'Kendall', 'Lane', 'Mason', 'Nova', 'Ocean'
+]
+
+const lastNames = [
+  'Smith', 'Johnson', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor',
+  'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Garcia', 'Martinez',
+  'Robinson', 'Clark', 'Rodriguez', 'Lewis', 'Lee', 'Walker', 'Hall', 'Allen',
+  'Young', 'King', 'Wright', 'Lopez', 'Hill', 'Scott', 'Green', 'Adams'
+]
+
+export function generateRandomName(): string {
+  const firstName = firstNames[Math.floor(Math.random() * firstNames.length)]
+  const lastName = lastNames[Math.floor(Math.random() * lastNames.length)]
+  const number = Math.floor(Math.random() * 999) + 1 // 1-999の範囲
+  return `${firstName}${lastName}${number}`
+} 
 
 export async function GET() {
   try {
